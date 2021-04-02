@@ -1,6 +1,13 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Welcome from '../Welcome/Welcome';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import EmailSubscriptions from '../EmailSubscriptions/EmailSubscriptions';
+import SMSSubscriptions from '../SMSSubscriptions/SMSSubscriptions';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,9 +30,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>Welcome! This is a clean CRA for web app development</p>
-        </header>
+        <Header />
+        <div id="component-container">
+          <Welcome />
+          <EmailSubscriptions />
+          <SMSSubscriptions />
+        </div>
+        <Footer />
       </div>
     );
   }
